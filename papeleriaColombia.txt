@@ -1,0 +1,43 @@
+CREATE database papeleriaColombia;
+USE papeleriaColombia;
+
+CREATE table usuario(
+id_usuario INT(2) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(20),
+fecha_nacimiento DATE,
+direccion VARCHAR(30),
+cedula INT(12),
+celular INT(10),
+correo VARCHAR(30)
+);
+
+CREATE table ciudad(
+id_ciudad INT(2) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nombre VARCHAR(25)
+);
+
+CREATE TABLE IF NOT EXISTS proveedor (
+  id_proveedor INT NOT NULL,
+  nit INT NULL,
+  nombre VARCHAR(45) NULL,
+  direccion VARCHAR(45) NULL,
+  producto VARCHAR(45) NULL,
+  celular VARCHAR(45) NULL,
+  estado VARCHAR(45) NULL,
+  PRIMARY KEY (id_proveedor));
+  
+  CREATE TABLE IF NOT EXISTS papeleria (
+  id_papeleria INT NOT NULL,
+  nit VARCHAR(45) NULL,
+  PRIMARY KEY (id_papeleria));
+  
+  CREATE TABLE categoria (
+  id_categoria int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  descripcion varchar(45) NOT NULL,
+  nombre varchar(45) NOT NULL
+);
+
+CREATE TABLE roles (
+  id_roles int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  descripcion varchar(45) NOT NULL
+)
