@@ -40,4 +40,14 @@ CREATE TABLE IF NOT EXISTS proveedor (
 CREATE TABLE roles (
   id_roles int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   descripcion varchar(45) NOT NULL
-)
+);
+
+ALTER TABLE usuario ADD(
+id_ciudad INT(2) NOT NULL
+);
+
+
+INSERT INTO ciudad(id_ciudad, nombre) VALUES (01, "Bogotá");
+INSERT INTO usuario(nombre, fecha_nacimiento, direccion, cedula, celular, correo, id_ciudad) VALUES ("Pedro", 2000/11/10, "Calle 2 carrera 21", 52986117, 3205684924, "Pedro@gmail.com", 01);
+
+ALTER TABLE usuario ADD CONSTRAINT usuario_ciudad_fk FOREIGN KEY (id_ciudad) REFERENCES ciudad(id_ciudad);
